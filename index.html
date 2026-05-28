@@ -67,6 +67,48 @@ nav.scrolled{box-shadow:var(--shadow);}
 .btn-o svg{width:18px;fill:#25d366;}
 .hero-right{background:var(--off);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;border-left:3px solid var(--teal);}
 .hero-right img{width:100%;height:100%;object-fit:cover;}
+
+/* HERO WOW ENTRY */
+#inicio{position:relative;overflow:hidden;background:linear-gradient(135deg,#fff 0%,#fff 58%,var(--off) 58%,var(--off) 100%);}
+#inicio::before{content:"";position:absolute;inset:68px 0 0 0;pointer-events:none;opacity:.55;background:linear-gradient(90deg,transparent 0,transparent calc(100% - 1px),rgba(0,142,138,.065) calc(100% - 1px)),linear-gradient(180deg,transparent 0,transparent calc(100% - 1px),rgba(0,142,138,.045) calc(100% - 1px));background-size:118px 118px;mask-image:linear-gradient(90deg,black 0%,transparent 55%);}
+#inicio::after{content:"";position:absolute;right:44%;top:68px;width:1px;height:calc(100% - 68px);background:linear-gradient(to bottom,transparent,rgba(0,142,138,.36),transparent);transform:skewX(-12deg);}
+.hero-left{position:relative;z-index:2;}
+.hero-left::before{content:"JV";position:absolute;left:7%;top:13%;font-family:'Playfair Display',serif;font-size:clamp(8rem,17vw,18rem);font-weight:900;letter-spacing:-.08em;color:rgba(0,142,138,.045);z-index:-1;line-height:1;}
+.hero-left .eyebrow,.hero-left .hero-h1,.hero-left .hero-p,.hero-left .hero-btns,.hero-left .hero-proof{opacity:0;transform:translateY(22px);animation:heroUp .9s cubic-bezier(.2,.8,.2,1) forwards;}
+.hero-left .eyebrow{animation-delay:.18s;}
+.hero-left .hero-h1{animation-delay:.36s;}
+.hero-left .hero-p{animation-delay:.56s;}
+.hero-left .hero-btns{animation-delay:.78s;}
+.hero-left .hero-proof{animation-delay:1.02s;}
+.hero-h1{letter-spacing:-.025em;}
+.hero-h1 em{position:relative;display:inline-block;}
+.hero-h1 em::after{content:"";position:absolute;left:0;bottom:.05em;width:100%;height:.15em;background:rgba(0,142,138,.18);z-index:-1;transform-origin:left;transform:scaleX(0);animation:heroUnderline .9s ease forwards 1.15s;}
+.hero-proof{display:grid;grid-template-columns:repeat(3,max-content);gap:1rem;margin-top:2rem;align-items:center;}
+.hero-proof div{border-left:2px solid var(--teal);padding:.45rem .8rem .45rem .75rem;background:rgba(255,255,255,.72);box-shadow:0 12px 30px rgba(0,0,0,.045);backdrop-filter:blur(8px);}
+.hero-proof strong{display:block;font-size:.86rem;color:var(--dark2);letter-spacing:.08em;text-transform:uppercase;line-height:1.1;}
+.hero-proof span{display:block;font-size:.66rem;color:var(--grey);font-weight:500;letter-spacing:.08em;text-transform:uppercase;margin-top:.15rem;}
+.hero-visual{isolation:isolate;box-shadow:inset 1px 0 0 rgba(0,142,138,.18);}
+.hero-stage{position:relative;width:100%;height:100%;min-height:calc(100vh - 68px);overflow:hidden;transform:scale(1.03);}
+.hero-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.hero-before{filter:grayscale(1) contrast(1.08) brightness(.62) blur(.4px);transform:scale(1.04);}
+.hero-after{clip-path:inset(0 100% 0 0);animation:heroReveal 1.75s cubic-bezier(.18,.82,.2,1) forwards .55s;transform:scale(1.02);}
+.hero-blueprint{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,.18) 1px,transparent 1px),linear-gradient(180deg,rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(135deg,transparent 0 58%,rgba(0,142,138,.38) 58.2%,transparent 59.1%);background-size:80px 80px,80px 80px,100% 100%;opacity:0;animation:blueprintIn 2.2s ease forwards .25s;mix-blend-mode:screen;}
+.hero-sweep{position:absolute;top:0;bottom:0;left:-18%;z-index:4;width:18%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.72),rgba(0,142,138,.36),transparent);transform:skewX(-14deg);filter:blur(.4px);animation:sweepMove 1.65s cubic-bezier(.25,.9,.2,1) forwards .52s;}
+.hero-float-card{position:absolute;right:2rem;bottom:2rem;z-index:5;background:rgba(17,17,17,.72);color:white;border-left:3px solid var(--teal);padding:.85rem 1.05rem;backdrop-filter:blur(12px);box-shadow:0 20px 45px rgba(0,0,0,.25);opacity:0;transform:translateY(14px);animation:heroUp .8s ease forwards 1.75s;}
+.hero-float-card span{display:block;font-size:.58rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.25rem;}
+.hero-float-card strong{display:block;font-size:.92rem;font-weight:600;letter-spacing:.03em;}
+.hero-visual::before{content:"ACABADOS REALES · YESO Y PLADUR";position:absolute;left:2rem;top:2rem;bottom:auto;z-index:6;color:white;background:rgba(17,17,17,.55);border-left:3px solid var(--teal);padding:.65rem 1rem;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;backdrop-filter:blur(8px);opacity:0;transform:translateY(-12px);animation:heroDown .8s ease forwards 1.35s;}
+.hero-visual::after{content:"";position:absolute;inset:0;z-index:2;background:radial-gradient(circle at 25% 20%,rgba(255,255,255,.14),transparent 32%),linear-gradient(120deg,rgba(0,142,138,.18),transparent 40%,rgba(17,17,17,.18));pointer-events:none;}
+.hero-scroll{position:absolute;left:50%;bottom:1.2rem;width:1px;height:54px;background:rgba(0,142,138,.2);z-index:5;overflow:hidden;}
+.hero-scroll span{display:block;width:100%;height:24px;background:var(--teal);animation:scrollCue 1.9s ease-in-out infinite;}
+@keyframes heroUp{to{opacity:1;transform:translateY(0);}}
+@keyframes heroDown{to{opacity:1;transform:translateY(0);}}
+@keyframes heroReveal{0%{clip-path:inset(0 100% 0 0);}72%{clip-path:inset(0 0 0 0);}100%{clip-path:inset(0 0 0 0);}}
+@keyframes sweepMove{0%{left:-22%;opacity:0;}10%{opacity:1;}88%{opacity:1;}100%{left:112%;opacity:0;}}
+@keyframes blueprintIn{0%{opacity:0;transform:scale(1.03);}35%{opacity:.7;}100%{opacity:.16;transform:scale(1);}}
+@keyframes heroUnderline{to{transform:scaleX(1);}}
+@keyframes scrollCue{0%{transform:translateY(-28px);opacity:0;}35%{opacity:1;}100%{transform:translateY(58px);opacity:0;}}
+@media(prefers-reduced-motion:reduce){.hero-left .eyebrow,.hero-left .hero-h1,.hero-left .hero-p,.hero-left .hero-btns,.hero-left .hero-proof,.hero-after,.hero-sweep,.hero-blueprint,.hero-float-card,.hero-visual::before,.hero-scroll span{animation:none!important;opacity:1!important;transform:none!important;}.hero-after{clip-path:inset(0 0 0 0)!important;}}
 /* STATS */
 .stats-bar{background:var(--dark2);display:flex;justify-content:center;}
 .stat{flex:1;max-width:250px;padding:2.2rem 1.5rem;text-align:center;border-right:1px solid rgba(255,255,255,.07);}
@@ -205,6 +247,41 @@ footer{background:#0a0a0a;padding:2rem 8%;}
 .wa-fl{position:fixed;bottom:1.8rem;right:1.8rem;z-index:200;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.4);transition:transform .22s;}
 .wa-fl:hover{transform:scale(1.1);}
 .wa-fl svg{width:26px;fill:white;}
+
+/* ── PREMIUM UPDATE: técnica, movimiento y sliders ── */
+.section-tech{position:relative;overflow:hidden;}
+.section-tech::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.45;background:linear-gradient(90deg,transparent 0,transparent calc(100% - 1px),rgba(0,142,138,.09) calc(100% - 1px)),linear-gradient(180deg,transparent 0,transparent calc(100% - 1px),rgba(0,142,138,.055) calc(100% - 1px));background-size:120px 120px;mask-image:linear-gradient(to bottom,transparent,black 18%,black 82%,transparent);}
+.section-tech>*{position:relative;z-index:1;}
+.hero-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(0,142,138,.16),transparent 38%,rgba(17,17,17,.08));pointer-events:none;}
+.hero-visual::before{content:"ACABADOS REALES · YESO Y PLADUR";position:absolute;left:2rem;bottom:2rem;z-index:2;color:white;background:rgba(17,17,17,.55);border-left:3px solid var(--teal);padding:.65rem 1rem;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;backdrop-filter:blur(8px);}
+[data-parallax]{will-change:transform;transform:scale(1.03);transition:transform .18s linear;}
+#sistemas{padding:6% 8%;background:linear-gradient(180deg,var(--white),var(--off));}
+.systems-head{text-align:center;max-width:760px;margin:0 auto 3rem;}
+.systems-sub{font-size:.92rem;font-weight:300;color:var(--grey);line-height:1.75;margin-top:.7rem;}
+.systems-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--grey-light);border:1px solid var(--grey-light);}
+.system-card{background:rgba(255,255,255,.94);padding:2.2rem 1.6rem;min-height:240px;position:relative;overflow:hidden;transition:transform .28s ease,background .28s ease,box-shadow .28s ease;}
+.system-card::before{content:"";position:absolute;right:-40px;top:-40px;width:130px;height:130px;border:1px solid rgba(0,142,138,.18);transform:rotate(35deg);}
+.system-card:hover{background:var(--white);transform:translateY(-4px);box-shadow:0 18px 42px rgba(0,0,0,.08);z-index:2;}
+.sys-n{display:inline-block;color:var(--teal);font-size:.68rem;font-weight:800;letter-spacing:.16em;margin-bottom:2.3rem;border-bottom:2px solid var(--teal);padding-bottom:.35rem;}
+.system-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--dark2);margin-bottom:.7rem;}
+.system-card p{font-size:.86rem;font-weight:300;color:var(--grey);line-height:1.72;}
+.sw{box-shadow:inset 0 0 0 1px rgba(255,255,255,.2);transition:transform .35s ease,box-shadow .35s ease;}
+.pc:hover .sw{transform:scale(1.006);box-shadow:0 20px 50px rgba(0,0,0,.11);}
+.sw::before{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.12),transparent 18%,transparent 82%,rgba(0,142,138,.12));mix-blend-mode:multiply;opacity:.55;}
+.sw::after{content:"ARRASTRAR";position:absolute;left:50%;top:50%;z-index:6;transform:translate(-50%,-50%);background:rgba(17,17,17,.68);color:white;border:1px solid rgba(255,255,255,.25);padding:.42rem .75rem;font-size:.58rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:0;transition:opacity .25s ease;pointer-events:none;backdrop-filter:blur(8px);}
+.sw:hover::after{opacity:1;}
+.id{clip-path:inset(0 0 0 30%);}
+.sh{left:30%;transition:left .55s cubic-bezier(.2,.8,.2,1);}
+.id{transition:clip-path .55s cubic-bezier(.2,.8,.2,1);}
+.sw.is-dragging .id,.sw.is-dragging .sh{transition:none;}
+.sh::before{border:2px solid rgba(0,142,138,.18);}
+.sh::after{box-shadow:inset 0 0 0 6px rgba(255,255,255,.24);}
+.bg{backdrop-filter:blur(8px);}
+.drag-cursor{position:fixed;left:0;top:0;z-index:1000;transform:translate(-50%,-50%);pointer-events:none;background:var(--dark2);color:white;border:1px solid rgba(255,255,255,.18);padding:.48rem .7rem;font-size:.58rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:0;transition:opacity .18s ease;mix-blend-mode:normal;}
+.drag-cursor.show{opacity:.92;}
+.pc{transition:transform .28s ease,box-shadow .28s ease;}
+.pc:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(0,0,0,.1);}
+
 /* MODALS */
 .mover{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:500;overflow-y:auto;padding:2rem 1rem;}
 .mover.open{display:flex;align-items:flex-start;justify-content:center;}
@@ -218,7 +295,7 @@ footer{background:#0a0a0a;padding:2rem 8%;}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s,transform .65s;}
 .reveal.visible{opacity:1;transform:none;}
 /* RESPONSIVE */
-@media(max-width:1024px){.psteps{grid-template-columns:1fr 1fr;gap:2rem;}.psteps::before{display:none;}.cg{grid-template-columns:1fr 1fr;}}
+@media(max-width:1024px){.psteps{grid-template-columns:1fr 1fr;gap:2rem;}.psteps::before{display:none;}.cg{grid-template-columns:1fr 1fr;}.systems-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:900px){
   #inicio,#sobre,#contacto{grid-template-columns:1fr;}
   .hero-right{display:none;}
@@ -240,7 +317,14 @@ footer{background:#0a0a0a;padding:2rem 8%;}
   .frow{grid-template-columns:1fr;}
   .cr{padding:5% 6%;}
 }
-@media(max-width:600px){.sg{grid-template-columns:1fr;}.psteps{grid-template-columns:1fr;}.cg{grid-template-columns:1fr;}.stat{max-width:100%;flex:0 0 100%;}}
+@media(max-width:600px){.sg{grid-template-columns:1fr;}.psteps{grid-template-columns:1fr;}.cg{grid-template-columns:1fr;}.systems-grid{grid-template-columns:1fr;}.stat{max-width:100%;flex:0 0 100%;}.hero-visual::before{display:none;}}
+
+/* HERO WOW OVERRIDES FINAL */
+#inicio .hero-visual::before{content:"ACABADOS REALES · YESO Y PLADUR";position:absolute;left:2rem;top:2rem;bottom:auto;z-index:6;color:white;background:rgba(17,17,17,.55);border-left:3px solid var(--teal);padding:.65rem 1rem;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;backdrop-filter:blur(8px);opacity:0;transform:translateY(-12px);animation:heroDown .8s ease forwards 1.35s;}
+#inicio .hero-visual::after{content:"";position:absolute;inset:0;z-index:2;background:radial-gradient(circle at 25% 20%,rgba(255,255,255,.14),transparent 32%),linear-gradient(120deg,rgba(0,142,138,.18),transparent 40%,rgba(17,17,17,.18));pointer-events:none;}
+@media(max-width:900px){#inicio{grid-template-columns:1fr;min-height:auto;}.hero-right{display:block;height:58vh;border-left:0;border-top:3px solid var(--teal);}.hero-stage{min-height:58vh;}.hero-left{padding:6rem 6% 3.5rem;}.hero-proof{grid-template-columns:1fr;gap:.7rem;max-width:360px;}.hero-scroll{display:none;}.hero-visual::before{left:1rem;top:1rem;font-size:.54rem;}.hero-float-card{right:1rem;bottom:1rem;}}
+@media(max-width:600px){.hero-float-card{display:none;}.hero-before,.hero-after{object-position:center;}.hero-proof div{padding:.4rem .7rem;}.hero-left::before{display:none;}}
+
 </style>
 </head>
 <body>
@@ -252,6 +336,7 @@ footer{background:#0a0a0a;padding:2rem 8%;}
     <button class="btn-cdn" onclick="denyC()" data-i18n="ck_no">Solo esenciales</button>
   </div>
 </div>
+<div class="drag-cursor" id="dragCursor" aria-hidden="true">ARRASTRAR</div>
 <!-- NAV -->
 <nav id="mainNav">
   <a href="#inicio" class="nav-logo"><img src="logo.png" alt="Juan Velasco Yeso y Pladur Roses Girona" width="160" height="48"></a>
@@ -287,8 +372,25 @@ footer{background:#0a0a0a;padding:2rem 8%;}
         <span data-i18n="h_wa">WhatsApp</span>
       </a>
     </div>
+    <div class="hero-proof" aria-label="Resumen de confianza">
+      <div><strong>+25</strong><span>años de oficio</span></div>
+      <div><strong>Roses</strong><span>Girona · Costa Brava</span></div>
+      <div><strong>100%</strong><span>trato directo</span></div>
+    </div>
   </div>
-  <div class="hero-right"><img src="after_living_room_fireplace.png" alt="Salón con chimenea acabado por Juan Velasco yesero en Roses Girona" loading="eager"></div>
+  <div class="hero-right hero-visual">
+    <div class="hero-stage" data-parallax>
+      <img class="hero-before" src="after_living_room_fireplace.png" alt="Base visual técnica de obra terminada Juan Velasco" loading="eager">
+      <img class="hero-after" src="after_living_room_fireplace.png" alt="Salón con chimenea acabado por Juan Velasco yesero en Roses Girona" loading="eager">
+      <div class="hero-blueprint" aria-hidden="true"></div>
+      <div class="hero-sweep" aria-hidden="true"></div>
+      <div class="hero-float-card">
+        <span>Proyecto real</span>
+        <strong>Acabado limpio</strong>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true"><span></span></div>
 </section>
 <!-- STATS -->
 <div class="stats-bar">
@@ -299,7 +401,7 @@ footer{background:#0a0a0a;padding:2rem 8%;}
 </div>
 <!-- SOBRE -->
 <section id="sobre">
-  <div class="sobre-img"><img src="after_loft_attic.png" alt="Buhardilla terminada con pladur y yeso por Juan Velasco en Girona" loading="lazy"></div>
+  <div class="sobre-img"><img data-parallax src="after_loft_attic.png" alt="Buhardilla terminada con pladur y yeso por Juan Velasco en Girona" loading="lazy"></div>
   <div class="sobre-c reveal">
     <div class="stag" data-i18n="n_sob">Sobre mí</div>
     <h2 class="sh2" data-i18n="sob_ti">Oficio, honestidad<br>y trabajo bien hecho</h2>
@@ -326,7 +428,7 @@ footer{background:#0a0a0a;padding:2rem 8%;}
   </div>
 </section>
 <!-- SERVICIOS -->
-<section id="servicios">
+<section id="servicios" class="section-tech">
   <div style="text-align:center;margin-bottom:0" class="reveal">
     <div class="stag c" data-i18n="sr_tg">Lo que hago</div>
     <h2 class="sh2" data-i18n="n_ser">Servicios</h2>
@@ -340,8 +442,38 @@ footer{background:#0a0a0a;padding:2rem 8%;}
     <div class="sc reveal"><div class="si">✨</div><h3 class="st" data-i18n="s6t">Reparaciones y repasos</h3><p class="sd" data-i18n="s6d">Grietas, desperfectos, humedades, techos dañados. Los trabajos pequeños se hacen igual que los grandes.</p></div>
   </div>
 </section>
+<!-- SISTEMAS Y MATERIALES -->
+<section id="sistemas" class="section-tech">
+  <div class="systems-head reveal">
+    <div class="stag c" data-i18n="mt_tg">Sistema técnico</div>
+    <h2 class="sh2" data-i18n="mt_ti">Sistemas y materiales</h2>
+    <p class="systems-sub" data-i18n="mt_su">Cada acabado empieza por una buena base: perfilería, placas, aislamiento y una ejecución precisa.</p>
+  </div>
+  <div class="systems-grid">
+    <article class="system-card reveal">
+      <span class="sys-n">01</span>
+      <h3 data-i18n="mt1t">Pladur técnico</h3>
+      <p data-i18n="mt1d">Tabiques, trasdosados y techos con placa estándar, hidrófuga o ignífuga según la necesidad de la obra.</p>
+    </article>
+    <article class="system-card reveal">
+      <span class="sys-n">02</span>
+      <h3 data-i18n="mt2t">Perfilería nivelada</h3>
+      <p data-i18n="mt2d">Estructuras limpias, alineadas y preparadas para que el acabado final quede recto, estable y duradero.</p>
+    </article>
+    <article class="system-card reveal">
+      <span class="sys-n">03</span>
+      <h3 data-i18n="mt3t">Aislamiento</h3>
+      <p data-i18n="mt3d">Lana de roca o fibra según el objetivo: confort térmico, reducción acústica y mejora del espacio interior.</p>
+    </article>
+    <article class="system-card reveal">
+      <span class="sys-n">04</span>
+      <h3 data-i18n="mt4t">Acabado fino</h3>
+      <p data-i18n="mt4d">Enlucidos, juntas y repasos finales pensados para recibir pintura y dejar paredes limpias a la vista.</p>
+    </article>
+  </div>
+</section>
 <!-- GALERÍA -->
-<section id="galeria">
+<section id="galeria" class="section-tech">
   <div style="text-align:center" class="reveal">
     <div class="stag c" data-i18n="g_tg">Casos reales</div>
     <h2 class="sh2" data-i18n="g_ti">Antes y después</h2>
@@ -406,7 +538,7 @@ footer{background:#0a0a0a;padding:2rem 8%;}
   </div>
 </section>
 <!-- ZONA -->
-<section id="zona">
+<section id="zona" class="section-tech">
   <div class="reveal">
     <div class="stag" data-i18n="z_tg">Zona de trabajo</div>
     <h2 class="sh2" data-i18n="z_ti">Roses y toda la provincia de Girona</h2>
@@ -526,7 +658,7 @@ footer{background:#0a0a0a;padding:2rem 8%;}
 <footer>
   <div class="fi2">
     <a href="#inicio" class="flogo"><img src="logo.png" alt="Juan Velasco" width="140" height="44"></a>
-    <p class="ftx">© 2024 <span>Juan Velasco</span> · <span data-i18n="ft_jo">Yeso y Pladur</span> · Roses · Girona</p>
+    <p class="ftx">© 2026 <span>Juan Velasco</span> · <span data-i18n="ft_jo">Yeso y Pladur</span> · Roses · Girona</p>
     <div class="flinks">
       <a href="#" onclick="openModal('aviso');return false;" data-i18n="ft_av">Aviso legal</a>
       <a href="#" onclick="openModal('priv');return false;" data-i18n="ft_pr">Privacidad</a>
@@ -572,10 +704,19 @@ en:{n_ini:"Home",n_sob:"About",n_ser:"Services",n_gal:"Gallery",n_com:"Why me",n
 fr:{n_ini:"Accueil",n_sob:"À propos",n_ser:"Services",n_gal:"Galerie",n_com:"Pourquoi moi",n_con:"Contact",h_ey:"Plâtrier · Plaquiste · Roses · Gérone",h_ti:"La finition que vous attendiez.<br>Le service que vous <em>méritez</em>.",h_su:"Plus de 25 ans à travailler le plâtre et le placo sur la Costa Brava. Toujours seul, toujours responsable, toujours au prix convenu.",h_ct:"Demander un devis",h_wa:"WhatsApp",s_yr:"Ans d'expérience",s_ob:"Chantiers réalisés",s_cl:"Clients satisfaits",s_re:"Responsable direct",sob_ti:"Métier, honnêteté<br>et travail bien fait",sob_p1:"Je m'appelle Juan Velasco et je travaille le plâtre et le placo à Roses depuis plus de 25 ans. Rénovations complètes, logements, locaux commerciaux et résidences secondaires sur la Costa Brava.",sob_p2:"Je travaille seul. Quand vous me faites confiance, c'est moi qui réalise le travail du début à la fin. Je ne sous-traite pas.",v1t:"Contact direct",v1d:"Du premier appel à la livraison, vous parlez toujours avec moi. Sans intermédiaires.",v2t:"Prix ferme",v2d:"Devis détaillé par écrit avant de commencer. Aucune surprise sur la facture finale.",v3t:"Propreté et ordre",v3d:"Je travaille en prenant soin de l'espace. Je range en fin de journée.",pr_tg:"Comment je travaille",pr_ti:"De l'appel à la livraison",p1t:"Vous me contactez",p1d:"Appelez, envoyez un WhatsApp ou utilisez le formulaire. Je réponds le jour même.",p2t:"Visite sans engagement",p2d:"Je visite et remets un devis écrit en moins de 48h.",p3t:"Exécution",p3d:"Je fais le travail moi-même. Avec soin, sans hâte et avec ordre.",p4t:"Livraison et vérification",p4d:"Nous vérifions ensemble. Je ne clôture pas tant que le résultat n'est pas celui convenu.",sr_tg:"Ce que je fais",s1t:"Placo & cloisons",s1d:"Cloisons en plaque de plâtre, doublages et divisions intérieures.",s2t:"Plâtre & enduits",s2d:"Projeté ou manuel, talochage et lissage fin. Finitions lisses ou texturées.",s3t:"Faux plafonds",s3d:"Continus et modulaires en plaque standard, hydrofuge ou coupe-feu.",s4t:"Isolation acoustique",s4d:"Systèmes doubles avec laine de roche ou fibre de verre.",s5t:"Isolation thermique",s5d:"Doublages sur façades et toitures. Amélioration de l'efficacité énergétique.",s6t:"Réparations & reprises",s6d:"Fissures, dégâts, humidités. Les petits travaux avec la même attention.",g_tg:"Chantiers réels",g_ti:"Avant & après",g_sb:"Faites glisser le curseur pour comparer. Toutes les images proviennent de chantiers réels.",ba:"Avant",bd:"Après",c1t:"Salon avec cheminée",c1s:"Plâtre · Lissage · Finitions",c2t:"Chambre",c2s:"Placo · Lissage · Finition",c3t:"Combles",c3s:"Placo · Plâtre · Plafonds inclinés",c4t:"Salle de bain",c4s:"Plâtre hydrofuge · Rénovation complète",c5t:"Local commercial",c5s:"Placo · Faux plafond · Cloisons",cm_tg:"Pourquoi me choisir",cm_ti:"Mes engagements envers vous",cm1t:"Contact direct",cm1d:"Du premier contact à la livraison, vous parlez toujours avec moi.",cm2t:"Devis ferme",cm2d:"Vous avez le prix par écrit avant le début. Si quelque chose change, je vous préviens avant.",cm3t:"Propreté et ordre",cm3d:"La poussière est inévitable, le désordre non. Je protège et range en fin de journée.",cm4t:"Ponctualité",cm4d:"Si on convient le lundi, je suis là le lundi. Je respecte votre temps.",cm5t:"Finitions de qualité",cm5d:"Plus de 25 ans de métier. Un bon travail se voit quand c'est bien fait.",cm6t:"Facture et assurance",cm6d:"Auto-entrepreneur déclaré, factures complètes et assurance RC en vigueur.",z_tg:"Zone d'intervention",z_ti:"Roses et toute la province de Gérone",z_tx:"Je suis basé à Roses et interviens sur toute la Costa Brava, l'Alt Empordà et la province de Gérone.",z_mo:"Costa Brava · Alt Empordà",fq_tg:"FAQ",fq_ti:"Ce qu'on me demande souvent",f1q:"Combien de temps pour un devis ?",f1a:"Je visite et remets le devis en moins de 48h. Pour petits travaux, estimation par téléphone le jour même.",f2q:"Faites-vous de petits travaux ?",f2a:"Oui. De la réparation de fissure à la rénovation complète. Même soin pour tout.",f3q:"Pouvez-vous travailler en mon absence ?",f3a:"Oui. Beaucoup de mes clients ont une résidence secondaire. Nous convenons de l'accès et je tiens informé par photos.",f4q:"Avez-vous une assurance RC ?",f4a:"Oui, en vigueur. Je peux fournir les documents si nécessaire.",f5q:"Pouvez-vous coordonner avec d'autres corps de métier ?",f5a:"Oui. Années d'expérience avec électriciens, plombiers, peintres et menuisiers.",f6q:"Émettez-vous des factures avec TVA ?",f6a:"Oui. Auto-entrepreneur déclaré, factures complètes avec toutes les mentions légales.",wb_ti:"Un chantier à Roses ou sur la Costa Brava ?",wb_su:"Écrivez-moi maintenant et je réponds aujourd'hui même.",wb_bt:"Écrire sur WhatsApp",ct_ti:"Demandez votre devis<br>sans engagement",ct_su:"Dites-moi ce dont vous avez besoin et je réponds sous 24 heures.",c_ph:"Téléphone / WhatsApp",c_em:"E-mail",c_zo:"Zone",c_zv:"Roses · toute la province de Gérone",fl_nm:"Nom *",fl_nmp:"Votre nom",fl_ph:"Téléphone *",fl_php:"Votre numéro",fl_sv:"Type de travaux",fl_sel:"Sélectionnez un service…",fl_ot:"Autre",fl_mg:"Décrivez le chantier *",fl_mgp:"Décrivez brièvement les travaux…",fl_pr:"J'ai lu et accepte la <a href=\"#\" onclick=\"openModal('priv');return false;\">politique de confidentialité</a>.",fl_sd:"Envoyer",fl_ok:"Merci ! Message reçu. Je réponds sous 24 heures. 🙌",fl_fl:"Une erreur s'est produite. Écrivez-moi directement.",fe_nm:"Veuillez entrer votre nom.",fe_ph:"Veuillez entrer votre téléphone.",fe_mg:"Veuillez décrire brièvement le chantier.",fe_pr:"Vous devez accepter la politique de confidentialité.",ft_jo:"Plâtrerie & Plaquisterie",ft_av:"Mentions légales",ft_pr:"Confidentialité",ck_txt:"Ce site utilise des cookies techniques. <a href=\"#\" onclick=\"openModal('priv');return false;\">En savoir plus</a>.",ck_ok:"Accepter",ck_no:"Essentiels seulement"},
 de:{n_ini:"Start",n_sob:"Über mich",n_ser:"Leistungen",n_gal:"Galerie",n_com:"Warum ich",n_con:"Kontakt",h_ey:"Gipser · Trockenbauer · Roses · Girona",h_ti:"Das Ergebnis, das Sie erwarteten.<br>Die Betreuung, die Sie <em>verdienen</em>.",h_su:"Über 25 Jahre Erfahrung mit Gips und Trockenbau an der Costa Brava. Immer allein, immer verantwortlich, immer zum vereinbarten Preis.",h_ct:"Angebot anfordern",h_wa:"WhatsApp",s_yr:"Jahre Erfahrung",s_ob:"Projekte abgeschlossen",s_cl:"Zufriedene Kunden",s_re:"Direkte Verantwortung",sob_ti:"Handwerk, Ehrlichkeit<br>und gute Arbeit",sob_p1:"Mein Name ist Juan Velasco und ich arbeite seit über 25 Jahren mit Gips und Trockenbau in Roses und in der gesamten Provinz Girona.",sob_p2:"Ich arbeite allein. Wenn Sie mich beauftragen, führe ich die Arbeit selbst von Anfang bis Ende aus. Ich vergebe keine Unteraufträge.",v1t:"Direkter Kontakt",v1d:"Vom ersten Anruf bis zur Übergabe sprechen Sie immer mit mir. Keine Mittelsmänner.",v2t:"Fester Preis",v2d:"Schriftliches Angebot vor Beginn. Keine Überraschungen auf der Rechnung.",v3t:"Sauberkeit und Ordnung",v3d:"Ich gehe sorgfältig mit dem Raum um. Am Ende jedes Tages räume ich auf.",pr_tg:"Wie ich arbeite",pr_ti:"Vom Anruf bis zur Übergabe",p1t:"Sie kontaktieren mich",p1d:"Anrufen, WhatsApp oder Formular. Ich antworte noch am gleichen Tag.",p2t:"Unverbindliche Besichtigung",p2d:"Ich besichtige und übergebe ein schriftliches Angebot innerhalb von 48 Stunden.",p3t:"Ausführung",p3d:"Ich führe die Arbeit selbst aus. Sorgfältig, ohne unnötige Hast und mit Ordnung.",p4t:"Übergabe und Kontrolle",p4d:"Wir prüfen gemeinsam. Ich schließe erst ab, wenn das Ergebnis dem Vereinbarten entspricht.",sr_tg:"Was ich mache",s1t:"Trockenbau & Wände",s1d:"Gipskartonwände, Vorsatzschalen und Raumteiler. Schnelle Montage und saubere Ausführung.",s2t:"Gips & Putz",s2d:"Maschinell oder manuell, Abzug und Glättputz. Glatte oder strukturierte Oberflächen.",s3t:"Abgehängte Decken",s3d:"Durchgehende und modulare Decken in Standard-, feuchtigkeitsresistenten oder feuerfesten Platten.",s4t:"Schallschutz",s4d:"Doppelsysteme mit Steinwolle oder Glaswolle für Lärmreduzierung.",s5t:"Wärmedämmung",s5d:"Vorsatzschalen an Fassaden und Dächern. Verbesserung der Energieeffizienz.",s6t:"Reparaturen & Ausbesserungen",s6d:"Risse, Schäden, Feuchtigkeit. Kleine Arbeiten mit derselben Sorgfalt.",g_tg:"Echte Projekte",g_ti:"Vorher & Nachher",g_sb:"Schieben Sie den Regler, um zu vergleichen. Alle Bilder aus echten Projekten.",ba:"Vorher",bd:"Nachher",c1t:"Wohnzimmer mit Kamin",c1s:"Gips · Glättputz · Finish",c2t:"Schlafzimmer",c2s:"Trockenbau · Glättputz · Finish",c3t:"Dachboden",c3s:"Trockenbau · Gips · Schräge Decken",c4t:"Badezimmer",c4s:"Feuchtigkeitsresistenter Gips · Komplettsanierung",c5t:"Gewerberaum",c5s:"Trockenbau · Abgehängte Decke · Wände",cm_tg:"Warum Kunden mich wählen",cm_ti:"Meine Versprechen an Sie",cm1t:"Direkter Kontakt",cm1d:"Vom ersten Kontakt bis zur Übergabe sprechen Sie immer mit mir.",cm2t:"Festes Angebot",cm2d:"Sie haben den Preis schriftlich vor Beginn. Wenn sich etwas ändert, informiere ich Sie zuerst.",cm3t:"Sauberkeit und Ordnung",cm3d:"Staub ist unvermeidlich, Unordnung nicht. Ich schütze und räume täglich auf.",cm4t:"Pünktlichkeit",cm4d:"Wenn wir Montag vereinbaren, bin ich Montag da. Ich respektiere Ihre Zeit.",cm5t:"Qualität",cm5d:"Über 25 Jahre Handwerk. Gute Arbeit sieht man, wenn sie gut gemacht ist.",cm6t:"Rechnung und Versicherung",cm6d:"Angemeldeter Selbstständiger, vollständige Rechnungen und Haftpflichtversicherung.",z_tg:"Einsatzgebiet",z_ti:"Roses und die gesamte Provinz Girona",z_tx:"Ich bin in Roses ansässig und fahre durch die gesamte Costa Brava, Alt Empordà und die Provinz Girona.",z_mo:"Costa Brava · Alt Empordà",fq_tg:"FAQ",fq_ti:"Was man mich oft fragt",f1q:"Wie lange dauert ein Angebot?",f1a:"Ich besichtige und liefere das Angebot innerhalb von 48 Stunden. Für kleine Arbeiten kann ich am Telefon schätzen.",f2q:"Machen Sie auch kleine Arbeiten?",f2a:"Ja. Von der Rissreparatur bis zur Komplettsanierung. Gleiche Sorgfalt für alles.",f3q:"Können Sie arbeiten, wenn ich nicht zu Hause bin?",f3a:"Ja. Viele Kunden haben Ferienhäuser. Wir vereinbaren Zugang und ich halte Sie per Fotos auf dem Laufenden.",f4q:"Haben Sie eine Haftpflichtversicherung?",f4a:"Ja, gültig. Unterlagen auf Wunsch verfügbar.",f5q:"Können Sie andere Gewerke koordinieren?",f5a:"Ja. Jahre der Zusammenarbeit mit Elektrikern, Installateuren, Malern und Schreinern.",f6q:"Stellen Sie MwSt-Rechnungen aus?",f6a:"Ja. Angemeldeter Selbstständiger mit vollständigen gesetzlichen Rechnungen.",wb_ti:"Ein Projekt in Roses oder an der Costa Brava?",wb_su:"Schreiben Sie mir jetzt — ich antworte noch heute.",wb_bt:"WhatsApp schreiben",ct_ti:"Kostenloses Angebot<br>ohne Verpflichtung",ct_su:"Sagen Sie mir, was Sie brauchen, und ich antworte innerhalb von 24 Stunden.",c_ph:"Telefon / WhatsApp",c_em:"E-Mail",c_zo:"Gebiet",c_zv:"Roses · gesamte Provinz Girona",fl_nm:"Name *",fl_nmp:"Ihr Name",fl_ph:"Telefon *",fl_php:"Ihre Nummer",fl_sv:"Art der Arbeit",fl_sel:"Service auswählen…",fl_ot:"Sonstiges",fl_mg:"Beschreiben Sie das Projekt *",fl_mgp:"Kurze Beschreibung der Arbeit…",fl_pr:"Ich habe die <a href=\"#\" onclick=\"openModal('priv');return false;\">Datenschutzrichtlinie</a> gelesen und akzeptiere sie.",fl_sd:"Anfrage senden",fl_ok:"Danke! Nachricht erhalten. Ich melde mich innerhalb von 24 Stunden. 🙌",fl_fl:"Ein Fehler ist aufgetreten. Schreiben Sie mir direkt.",fe_nm:"Bitte geben Sie Ihren Namen ein.",fe_ph:"Bitte geben Sie Ihre Telefonnummer ein.",fe_mg:"Bitte beschreiben Sie das Projekt kurz.",fe_pr:"Sie müssen die Datenschutzrichtlinie akzeptieren.",ft_jo:"Gips & Trockenbau",ft_av:"Impressum",ft_pr:"Datenschutz",ck_txt:"Diese Website verwendet technische Cookies. <a href=\"#\" onclick=\"openModal('priv');return false;\">Mehr erfahren</a>.",ck_ok:"Akzeptieren",ck_no:"Nur notwendige"}
 };
+
+const TX={
+ca:{mt_tg:"Sistema tècnic",mt_ti:"Sistemes i materials",mt_su:"Cada acabat comença per una bona base: perfileria, plaques, aïllament i una execució precisa.",mt1t:"Pladur tècnic",mt1d:"Envans, trasdossats i sostres amb placa estàndard, hidròfuga o ignífuga segons la necessitat de l’obra.",mt2t:"Perfileria anivellada",mt2d:"Estructures netes, alineades i preparades perquè l’acabat final quedi recte, estable i durador.",mt3t:"Aïllament",mt3d:"Llana de roca o fibra segons l’objectiu: confort tèrmic, reducció acústica i millora de l’espai interior.",mt4t:"Acabat fi",mt4d:"Lluïts, juntes i repassos finals pensats per rebre pintura i deixar parets netes a la vista."},
+es:{mt_tg:"Sistema técnico",mt_ti:"Sistemas y materiales",mt_su:"Cada acabado empieza por una buena base: perfilería, placas, aislamiento y una ejecución precisa.",mt1t:"Pladur técnico",mt1d:"Tabiques, trasdosados y techos con placa estándar, hidrófuga o ignífuga según la necesidad de la obra.",mt2t:"Perfilería nivelada",mt2d:"Estructuras limpias, alineadas y preparadas para que el acabado final quede recto, estable y duradero.",mt3t:"Aislamiento",mt3d:"Lana de roca o fibra según el objetivo: confort térmico, reducción acústica y mejora del espacio interior.",mt4t:"Acabado fino",mt4d:"Enlucidos, juntas y repasos finales pensados para recibir pintura y dejar paredes limpias a la vista."},
+en:{mt_tg:"Technical system",mt_ti:"Systems and materials",mt_su:"Every finish starts with a solid base: profiles, boards, insulation and precise execution.",mt1t:"Technical drywall",mt1d:"Partitions, dry linings and ceilings using standard, moisture-resistant or fire-rated boards depending on the project.",mt2t:"Levelled profiles",mt2d:"Clean, aligned structures prepared so the final finish is straight, stable and long-lasting.",mt3t:"Insulation",mt3d:"Rock wool or fibre depending on the goal: thermal comfort, acoustic reduction and a better interior space.",mt4t:"Fine finish",mt4d:"Skimming, joints and final touch-ups ready for painting and clean walls."},
+fr:{mt_tg:"Système technique",mt_ti:"Systèmes et matériaux",mt_su:"Chaque finition commence par une bonne base : ossature, plaques, isolation et exécution précise.",mt1t:"Placo technique",mt1d:"Cloisons, doublages et plafonds en plaque standard, hydrofuge ou coupe-feu selon le chantier.",mt2t:"Ossature nivelée",mt2d:"Structures propres, alignées et préparées pour une finition droite, stable et durable.",mt3t:"Isolation",mt3d:"Laine de roche ou fibre selon l’objectif : confort thermique, réduction acoustique et amélioration de l’espace.",mt4t:"Finition fine",mt4d:"Enduits, joints et reprises finales prêts à peindre pour des murs nets."},
+de:{mt_tg:"Technisches System",mt_ti:"Systeme und Materialien",mt_su:"Jede Oberfläche beginnt mit einer guten Basis: Profile, Platten, Dämmung und präzise Ausführung.",mt1t:"Technischer Trockenbau",mt1d:"Wände, Vorsatzschalen und Decken mit Standard-, Feuchtraum- oder Brandschutzplatten je nach Bedarf.",mt2t:"Ausgerichtete Profile",mt2d:"Saubere, ausgerichtete Strukturen für ein gerades, stabiles und langlebiges Endergebnis.",mt3t:"Dämmung",mt3d:"Steinwolle oder Faser je nach Ziel: Wärmekomfort, Schallreduzierung und bessere Innenräume.",mt4t:"Feiner Abschluss",mt4d:"Glättputz, Fugen und letzte Ausbesserungen, bereit für Farbe und saubere Wände."}
+};
+
 let lang='es';
 function setLang(l){
   lang=l;document.documentElement.lang=l;
-  const t=T[l];
+  const t={...(T[l]||T.es),...(TX[l]||TX.es)};
   document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.toLowerCase()===l));
   document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(t[k]!==undefined)el.innerHTML=t[k];});
   document.querySelectorAll('[data-i18n-ph]').forEach(el=>{const k=el.getAttribute('data-i18n-ph');if(t[k]!==undefined)el.placeholder=t[k];});
@@ -594,15 +735,52 @@ const ro=new IntersectionObserver(entries=>entries.forEach((e,i)=>{if(e.isInters
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 function toggleFaq(btn){const it=btn.closest('.fi');const wo=it.classList.contains('open');document.querySelectorAll('.fi.open').forEach(i=>i.classList.remove('open'));if(!wo)it.classList.add('open');}
 document.querySelectorAll('[data-slider]').forEach(wrap=>{
-  const af=wrap.querySelector('.id'),h=wrap.querySelector('.sh');let on=false;
-  function sp(x){const r=wrap.getBoundingClientRect();const p=Math.max(2,Math.min(98,((x-r.left)/r.width)*100));af.style.clipPath=`inset(0 0 0 ${p}%)`;h.style.left=p+'%';}
-  wrap.addEventListener('mousedown',e=>{on=true;sp(e.clientX);e.preventDefault();});
-  window.addEventListener('mousemove',e=>{if(on)sp(e.clientX);});
-  window.addEventListener('mouseup',()=>on=false);
-  wrap.addEventListener('touchstart',e=>{on=true;sp(e.touches[0].clientX);},{passive:true});
+  const af=wrap.querySelector('.id'),h=wrap.querySelector('.sh');
+  const cursor=document.getElementById('dragCursor');
+  let on=false;
+  function setSlider(p,instant=false){
+    p=Math.max(2,Math.min(98,p));
+    if(instant)wrap.classList.add('is-dragging');
+    af.style.clipPath=`inset(0 0 0 ${p}%)`;
+    h.style.left=p+'%';
+    if(!instant)setTimeout(()=>wrap.classList.remove('is-dragging'),60);
+  }
+  function sp(x){const r=wrap.getBoundingClientRect();setSlider(((x-r.left)/r.width)*100,true);}
+  setSlider(30); // izquierda = ANTES, derecha = DESPUÉS. Inicio: 70% del resultado final visible.
+  wrap.addEventListener('mousedown',e=>{on=true;wrap.classList.add('is-dragging');sp(e.clientX);e.preventDefault();});
+  window.addEventListener('mousemove',e=>{if(cursor){cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';}if(on)sp(e.clientX);});
+  window.addEventListener('mouseup',()=>{on=false;wrap.classList.remove('is-dragging');});
+  wrap.addEventListener('touchstart',e=>{on=true;wrap.classList.add('is-dragging');sp(e.touches[0].clientX);},{passive:true});
   window.addEventListener('touchmove',e=>{if(on)sp(e.touches[0].clientX);},{passive:true});
-  window.addEventListener('touchend',()=>on=false);
+  window.addEventListener('touchend',()=>{on=false;wrap.classList.remove('is-dragging');});
+  wrap.addEventListener('mouseenter',()=>cursor&&cursor.classList.add('show'));
+  wrap.addEventListener('mouseleave',()=>cursor&&cursor.classList.remove('show'));
+  const auto=new IntersectionObserver(entries=>entries.forEach(en=>{
+    if(en.isIntersecting&&!wrap.dataset.played){
+      wrap.dataset.played='1';
+      setTimeout(()=>setSlider(42),250);
+      setTimeout(()=>setSlider(24),1050);
+      setTimeout(()=>setSlider(30),1850);
+    }
+  }),{threshold:.45});
+  auto.observe(wrap);
 });
+
+const parallaxEls=[...document.querySelectorAll('[data-parallax]')];
+function updateParallax(){
+  const vh=window.innerHeight;
+  parallaxEls.forEach(el=>{
+    const r=el.getBoundingClientRect();
+    if(r.bottom>0&&r.top<vh){
+      const move=((r.top+r.height/2)-vh/2)/vh*18;
+      el.style.transform=`scale(1.04) translateY(${move}px)`;
+    }
+  });
+}
+window.addEventListener('scroll',updateParallax,{passive:true});
+window.addEventListener('resize',updateParallax);
+updateParallax();
+
 async function submitForm(e){
   e.preventDefault();const t=T[lang];let ok=true;
   const fn=document.getElementById('fn'),fp=document.getElementById('fp'),fm=document.getElementById('fm'),prv=document.getElementById('prv');
