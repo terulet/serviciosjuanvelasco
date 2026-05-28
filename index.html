@@ -72,14 +72,23 @@ nav.scrolled{box-shadow:var(--shadow);}
 #inicio{position:relative;overflow:hidden;background:linear-gradient(135deg,#fff 0%,#fff 58%,var(--off) 58%,var(--off) 100%);}
 #inicio::before{content:"";position:absolute;inset:68px 0 0 0;pointer-events:none;opacity:.55;background:linear-gradient(90deg,transparent 0,transparent calc(100% - 1px),rgba(0,142,138,.065) calc(100% - 1px)),linear-gradient(180deg,transparent 0,transparent calc(100% - 1px),rgba(0,142,138,.045) calc(100% - 1px));background-size:118px 118px;mask-image:linear-gradient(90deg,black 0%,transparent 55%);}
 #inicio::after{content:"";position:absolute;right:44%;top:68px;width:1px;height:calc(100% - 68px);background:linear-gradient(to bottom,transparent,rgba(0,142,138,.36),transparent);transform:skewX(-12deg);}
+
+.hero-trustbar{display:inline-flex;align-items:center;gap:.55rem;flex-wrap:wrap;align-self:flex-start;margin-bottom:1.05rem;padding:.58rem .8rem;border:1px solid rgba(0,142,138,.20);background:linear-gradient(135deg,rgba(0,142,138,.08),rgba(255,255,255,.72));box-shadow:0 14px 36px rgba(0,0,0,.055);backdrop-filter:blur(8px);position:relative;overflow:hidden;}
+.hero-trustbar::before{content:"";position:absolute;left:-35%;top:0;width:32%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-18deg);animation:trustSweep 3.6s ease-in-out infinite 1.6s;}
+.hero-trustbar span{position:relative;z-index:1;display:inline-flex;align-items:center;gap:.45rem;font-size:.62rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--dark2);white-space:nowrap;}
+.hero-trustbar span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(0,142,138,.10);}
+.hero-trustbar i{position:relative;z-index:1;width:1px;height:14px;background:rgba(0,142,138,.22);display:block;}
+@keyframes trustSweep{0%,55%{left:-35%;opacity:0;}65%{opacity:1;}100%{left:115%;opacity:0;}}
+
 .hero-left{position:relative;z-index:2;}
 .hero-left::before{content:"JV";position:absolute;left:7%;top:13%;font-family:'Playfair Display',serif;font-size:clamp(8rem,17vw,18rem);font-weight:900;letter-spacing:-.08em;color:rgba(0,142,138,.045);z-index:-1;line-height:1;}
-.hero-left .eyebrow,.hero-left .hero-h1,.hero-left .hero-p,.hero-left .hero-btns,.hero-left .hero-proof{opacity:0;transform:translateY(22px);animation:heroUp .9s cubic-bezier(.2,.8,.2,1) forwards;}
-.hero-left .eyebrow{animation-delay:.18s;}
-.hero-left .hero-h1{animation-delay:.36s;}
-.hero-left .hero-p{animation-delay:.56s;}
-.hero-left .hero-btns{animation-delay:.78s;}
-.hero-left .hero-proof{animation-delay:1.02s;}
+.hero-left .hero-trustbar,.hero-left .eyebrow,.hero-left .hero-h1,.hero-left .hero-p,.hero-left .hero-btns,.hero-left .hero-proof{opacity:0;transform:translateY(22px);animation:heroUp .9s cubic-bezier(.2,.8,.2,1) forwards;}
+.hero-left .hero-trustbar{animation-delay:.08s;}
+.hero-left .eyebrow{animation-delay:.22s;}
+.hero-left .hero-h1{animation-delay:.42s;}
+.hero-left .hero-p{animation-delay:.62s;}
+.hero-left .hero-btns{animation-delay:.84s;}
+.hero-left .hero-proof{animation-delay:1.08s;}
 .hero-h1{letter-spacing:-.025em;}
 .hero-h1 em{position:relative;display:inline-block;}
 .hero-h1 em::after{content:"";position:absolute;left:0;bottom:.05em;width:100%;height:.15em;background:rgba(0,142,138,.18);z-index:-1;transform-origin:left;transform:scaleX(0);animation:heroUnderline .9s ease forwards 1.15s;}
@@ -108,7 +117,7 @@ nav.scrolled{box-shadow:var(--shadow);}
 @keyframes blueprintIn{0%{opacity:0;transform:scale(1.03);}35%{opacity:.7;}100%{opacity:.16;transform:scale(1);}}
 @keyframes heroUnderline{to{transform:scaleX(1);}}
 @keyframes scrollCue{0%{transform:translateY(-28px);opacity:0;}35%{opacity:1;}100%{transform:translateY(58px);opacity:0;}}
-@media(prefers-reduced-motion:reduce){.hero-left .eyebrow,.hero-left .hero-h1,.hero-left .hero-p,.hero-left .hero-btns,.hero-left .hero-proof,.hero-after,.hero-sweep,.hero-blueprint,.hero-float-card,.hero-visual::before,.hero-scroll span{animation:none!important;opacity:1!important;transform:none!important;}.hero-after{clip-path:inset(0 0 0 0)!important;}}
+@media(prefers-reduced-motion:reduce){.hero-left .hero-trustbar,.hero-left .eyebrow,.hero-left .hero-h1,.hero-left .hero-p,.hero-left .hero-btns,.hero-left .hero-proof,.hero-after,.hero-sweep,.hero-blueprint,.hero-float-card,.hero-visual::before,.hero-scroll span{animation:none!important;opacity:1!important;transform:none!important;}.hero-after{clip-path:inset(0 0 0 0)!important;}}
 /* STATS */
 .stats-bar{background:var(--dark2);display:flex;justify-content:center;}
 .stat{flex:1;max-width:250px;padding:2.2rem 1.5rem;text-align:center;border-right:1px solid rgba(255,255,255,.07);}
@@ -166,6 +175,7 @@ nav.scrolled{box-shadow:var(--shadow);}
 .sw{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;cursor:ew-resize;user-select:none;}
 .pc.full .sw{aspect-ratio:16/7;}
 .sw img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none;}
+.pc:nth-of-type(2) .id{object-position:center center;}
 .ia{z-index:1;}.id{z-index:2;clip-path:inset(0 0 0 50%);}
 .sh{position:absolute;top:0;left:50%;width:2px;height:100%;background:rgba(255,255,255,.9);z-index:3;transform:translateX(-50%);pointer-events:none;}
 .sh::before,.sh::after{content:'';position:absolute;left:50%;transform:translateX(-50%);border-radius:50%;top:50%;}
@@ -270,8 +280,8 @@ footer{background:#0a0a0a;padding:2rem 8%;}
 .sw::before{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.12),transparent 18%,transparent 82%,rgba(0,142,138,.12));mix-blend-mode:multiply;opacity:.55;}
 .sw::after{content:"ARRASTRAR";position:absolute;left:50%;top:50%;z-index:6;transform:translate(-50%,-50%);background:rgba(17,17,17,.68);color:white;border:1px solid rgba(255,255,255,.25);padding:.42rem .75rem;font-size:.58rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:0;transition:opacity .25s ease;pointer-events:none;backdrop-filter:blur(8px);}
 .sw:hover::after{opacity:1;}
-.id{clip-path:inset(0 0 0 30%);}
-.sh{left:30%;transition:left .55s cubic-bezier(.2,.8,.2,1);}
+.id{clip-path:inset(0 0 0 22%);}
+.sh{left:22%;transition:left .55s cubic-bezier(.2,.8,.2,1);}
 .id{transition:clip-path .55s cubic-bezier(.2,.8,.2,1);}
 .sw.is-dragging .id,.sw.is-dragging .sh{transition:none;}
 .sh::before{border:2px solid rgba(0,142,138,.18);}
@@ -322,6 +332,9 @@ footer{background:#0a0a0a;padding:2rem 8%;}
 /* HERO WOW OVERRIDES FINAL */
 #inicio .hero-visual::before{content:"ACABADOS REALES · YESO Y PLADUR";position:absolute;left:2rem;top:2rem;bottom:auto;z-index:6;color:white;background:rgba(17,17,17,.55);border-left:3px solid var(--teal);padding:.65rem 1rem;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;backdrop-filter:blur(8px);opacity:0;transform:translateY(-12px);animation:heroDown .8s ease forwards 1.35s;}
 #inicio .hero-visual::after{content:"";position:absolute;inset:0;z-index:2;background:radial-gradient(circle at 25% 20%,rgba(255,255,255,.14),transparent 32%),linear-gradient(120deg,rgba(0,142,138,.18),transparent 40%,rgba(17,17,17,.18));pointer-events:none;}
+
+@media(max-width:720px){.hero-trustbar{margin-bottom:.9rem;padding:.52rem .65rem;gap:.42rem}.hero-trustbar span{font-size:.55rem;letter-spacing:.09em}.hero-trustbar i{display:none}}
+
 @media(max-width:900px){#inicio{grid-template-columns:1fr;min-height:auto;}.hero-right{display:block;height:58vh;border-left:0;border-top:3px solid var(--teal);}.hero-stage{min-height:58vh;}.hero-left{padding:6rem 6% 3.5rem;}.hero-proof{grid-template-columns:1fr;gap:.7rem;max-width:360px;}.hero-scroll{display:none;}.hero-visual::before{left:1rem;top:1rem;font-size:.54rem;}.hero-float-card{right:1rem;bottom:1rem;}}
 @media(max-width:600px){.hero-float-card{display:none;}.hero-before,.hero-after{object-position:center;}.hero-proof div{padding:.4rem .7rem;}.hero-left::before{display:none;}}
 
@@ -362,6 +375,9 @@ footer{background:#0a0a0a;padding:2rem 8%;}
 <!-- HERO -->
 <section id="inicio">
   <div class="hero-left">
+    <div class="hero-trustbar" aria-label="Resumen de confianza">
+      <span>+25 años</span><i></i><span>Presupuesto claro</span><i></i><span>Roses · Girona</span>
+    </div>
     <p class="eyebrow" data-i18n="h_ey">Yesero · Pladurista · Roses · Girona</p>
     <h1 class="hero-h1" data-i18n="h_ti">El acabado que esperabas.<br>El trato que <em>mereces</em>.</h1>
     <p class="hero-p" data-i18n="h_su">Más de 25 años trabajando el yeso y el pladur en la Costa Brava. Siempre solo, siempre responsable, siempre al precio acordado.</p>
@@ -492,40 +508,40 @@ footer{background:#0a0a0a;padding:2rem 8%;}
     <div class="pc full reveal">
       <div class="pl"><span data-i18n="c1t">Salón con chimenea</span><small data-i18n="c1s">Yeso · Enlucido · Acabados</small></div>
       <div class="sw" data-slider>
-        <img class="ia" src="before_living_room_fireplace.png" alt="Salón con chimenea en obra antes reforma yeso Girona" loading="lazy">
-        <img class="id" src="after_living_room_fireplace.png" alt="Salón chimenea terminado yeso enlucido Juan Velasco Roses" loading="lazy">
+        <img class="ia" src="before_living_room_fireplace.png" alt="Salón con chimenea en obra antes reforma yeso Girona" loading="eager">
+        <img class="id" src="after_living_room_fireplace.png" alt="Salón chimenea terminado yeso enlucido Juan Velasco Roses" loading="eager">
         <div class="sh"></div><div class="bg bg-a" data-i18n="ba">Antes</div><div class="bg bg-d" data-i18n="bd">Después</div>
       </div>
     </div>
     <div class="pc reveal">
       <div class="pl"><span data-i18n="c2t">Habitación</span><small data-i18n="c2s">Pladur · Enlucido · Acabado</small></div>
       <div class="sw" data-slider>
-        <img class="ia" src="before_loft_attic.png" alt="Habitación en obra antes de pladur y enlucido en Girona" loading="lazy">
-        <img class="id" src="after_bedroom_window.png" alt="Habitación terminada con pladur y enlucido por Juan Velasco en Girona" loading="lazy">
+        <img class="ia" src="before_loft_attic.png" alt="Habitación en obra antes de pladur y enlucido en Girona" loading="eager">
+        <img class="id" src="after_bedroom_window.png" alt="Habitación terminada con pladur y enlucido por Juan Velasco en Girona" loading="eager" decoding="async" fetchpriority="high">
         <div class="sh"></div><div class="bg bg-a" data-i18n="ba">Antes</div><div class="bg bg-d" data-i18n="bd">Después</div>
       </div>
     </div>
     <div class="pc reveal">
       <div class="pl"><span data-i18n="c3t">Buhardilla</span><small data-i18n="c3s">Pladur · Yeso · Techos inclinados</small></div>
       <div class="sw" data-slider>
-        <img class="ia" src="before_bathroom_renovation.png" alt="Buhardilla en obra antes de pladur y yeso en Roses Girona" loading="lazy">
-        <img class="id" src="after_loft_attic.png" alt="Buhardilla terminada con pladur y yeso por Juan Velasco en Girona" loading="lazy">
+        <img class="ia" src="before_bathroom_renovation.png" alt="Buhardilla en obra antes de pladur y yeso en Roses Girona" loading="eager">
+        <img class="id" src="after_loft_attic.png" alt="Buhardilla terminada con pladur y yeso por Juan Velasco en Girona" loading="eager">
         <div class="sh"></div><div class="bg bg-a" data-i18n="ba">Antes</div><div class="bg bg-d" data-i18n="bd">Después</div>
       </div>
     </div>
     <div class="pc reveal">
       <div class="pl"><span data-i18n="c4t">Baño</span><small data-i18n="c4s">Yeso hidrófugo · Reforma integral</small></div>
       <div class="sw" data-slider>
-        <img class="ia" src="before_commercial_space.png" alt="Baño en obra antes de reforma y acabados en Girona" loading="lazy">
-        <img class="id" src="after_bathroom_renovation.png" alt="Baño terminado con acabados limpios por Juan Velasco en Girona" loading="lazy">
+        <img class="ia" src="before_commercial_space.png" alt="Baño en obra antes de reforma y acabados en Girona" loading="eager">
+        <img class="id" src="after_bathroom_renovation.png" alt="Baño terminado con acabados limpios por Juan Velasco en Girona" loading="eager">
         <div class="sh"></div><div class="bg bg-a" data-i18n="ba">Antes</div><div class="bg bg-d" data-i18n="bd">Después</div>
       </div>
     </div>
     <div class="pc full reveal">
       <div class="pl"><span data-i18n="c5t">Espacio comercial</span><small data-i18n="c5s">Pladur · Falso techo · Tabiquería</small></div>
       <div class="sw" data-slider>
-        <img class="ia" src="before_bedroom_window.png" alt="Espacio comercial en obra antes de pladur y falso techo en Girona" loading="lazy">
-        <img class="id" src="after_commercial_space.png" alt="Espacio comercial terminado con pladur y falso techo por Juan Velasco en Girona" loading="lazy">
+        <img class="ia" src="before_bedroom_window.png" alt="Espacio comercial en obra antes de pladur y falso techo en Girona" loading="eager">
+        <img class="id" src="after_commercial_space.png" alt="Espacio comercial terminado con pladur y falso techo por Juan Velasco en Girona" loading="eager">
         <div class="sh"></div><div class="bg bg-a" data-i18n="ba">Antes</div><div class="bg bg-d" data-i18n="bd">Después</div>
       </div>
     </div>
@@ -755,7 +771,7 @@ document.querySelectorAll('[data-slider]').forEach(wrap=>{
     if(!instant)setTimeout(()=>wrap.classList.remove('is-dragging'),60);
   }
   function sp(x){const r=wrap.getBoundingClientRect();setSlider(((x-r.left)/r.width)*100,true);}
-  setSlider(30); // izquierda = ANTES, derecha = DESPUÉS. Inicio: 70% del resultado final visible.
+  setSlider(22); // izquierda = ANTES, derecha = DESPUÉS. Inicio: 78% del resultado final visible.
   wrap.addEventListener('mousedown',e=>{on=true;wrap.classList.add('is-dragging');sp(e.clientX);e.preventDefault();});
   window.addEventListener('mousemove',e=>{if(cursor){cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';}if(on)sp(e.clientX);});
   window.addEventListener('mouseup',()=>{on=false;wrap.classList.remove('is-dragging');});
@@ -767,9 +783,9 @@ document.querySelectorAll('[data-slider]').forEach(wrap=>{
   const auto=new IntersectionObserver(entries=>entries.forEach(en=>{
     if(en.isIntersecting&&!wrap.dataset.played){
       wrap.dataset.played='1';
-      setTimeout(()=>setSlider(42),250);
-      setTimeout(()=>setSlider(24),1050);
-      setTimeout(()=>setSlider(30),1850);
+      setTimeout(()=>setSlider(38),250);
+      setTimeout(()=>setSlider(18),1050);
+      setTimeout(()=>setSlider(22),1850);
     }
   }),{threshold:.45});
   auto.observe(wrap);
