@@ -450,6 +450,10 @@
     /* ---- Hero MOBILE — imagen de fondo a pantalla completa ---- */
     @media (max-width: 900px) {
 
+      /* Ocultar links desktop en móvil */
+      .nav-links, .nav-lang { display: none; }
+      .nav-hamburger { display: flex; }
+
       /* Navbar: transparente sobre la imagen */
       #navbar {
         background: rgba(255,255,255,0.0);
